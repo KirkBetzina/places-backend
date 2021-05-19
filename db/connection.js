@@ -5,7 +5,7 @@ require("dotenv").config();
 const mongoose = require('mongoose')
 
 //connection URI                                      CONNECTION
-const mongoURI = 'mongodb://localhost:27017' + 'people'
+const mongoURI = 'mongodb://localhost:27017' + 'places'
 
 /// configs
 const config = {

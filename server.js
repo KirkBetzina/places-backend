@@ -1,6 +1,7 @@
 // GET ENVIRONMENTAL VARIABLES
 require("dotenv").config();
 
+
 //GET PORT FROM ENV VARIABLES
 const PORT = process.env.PORT;
 
@@ -14,7 +15,7 @@ const cors = require("cors");
 // IMPORT DATABASE CONNECTION
 const mongoose = require("./db/connection");
 
-const peopleRouter = require("./controller/places");
+const placesRouter = require("./controller/places");
 
 // CREATE EXPRESS APPLICATION OBJECT
 const app = express();
@@ -26,6 +27,6 @@ app.use(morgan("tiny")); // <----- logging for debugging
 
 // ROUTES AND ROUTES
 app.get("/", (req, res) => res.send("Server is Working")); // <--- Route to test server
-app.use("/places", peopleRouter);
+app.use("/places", placesRouter);
 // Server Listener
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
